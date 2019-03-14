@@ -5,7 +5,7 @@ class App extends React.Component {
     render() {
         return (
             <View>
-                <Text>Hello World</Text>
+                <Text>sasiwimon muangpatum</Text>
             </View>
         );
     }
