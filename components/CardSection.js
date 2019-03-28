@@ -5,7 +5,8 @@ class CardSection extends Component {
     render() {
         return (
             <View>
-                <Text>xxxxxxx</Text>
+                {this.props.children}
+                {/* <Text>xxxxxxx</Text> */}
             </View>
         );
     }
