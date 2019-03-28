@@ -9,7 +9,7 @@ class Header extends Component {
                     { this.props.title }
                 </Text>
             </View>
-        )
+        );
     }
 }
 const styles = {
