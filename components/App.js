@@ -5,11 +5,14 @@ import Header from './Header';
 class App extends React.Component {
     render() {
         return (
-            <View>
+            <View >
                 <Header title="Albums" />
-                <Text>sasiwimon muangpatum</Text>
+                {/* <Text>sasiwimon muangpatum</Text> */}
             </View>
         );
     }
 }
+
+
+
 export default App;
