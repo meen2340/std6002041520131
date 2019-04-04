@@ -18,7 +18,7 @@ class Card extends Component {
                         </View>
                    </View>
                     
-  
+
                 </CardSection>
                 <CardSection>
                     <Image
