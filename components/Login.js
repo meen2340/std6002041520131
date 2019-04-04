@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import { View, StyleSheet, Image, Button, TextInput, TouchableHighlight, Text } from 'react-native';
+import {AsyncStorage} from 'react-native';
 import axios from 'axios';
-
 
 class Login extends Component {
     constructor(){
@@ -49,16 +49,16 @@ class Login extends Component {
                         onChangeText={this.onChangePassword.bind(this)}
                     ></TextInput>
                 </View>
-                <Button 
+                {/* <Button 
                     style={[styles.buttonContainer, styles.loginButton]}
                     title="Login"
                     //color="#5DADE2"
                     onPress={this.onPress.bind(this)}
-                />
-                {/* <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onPress.bind(this)}>
+                /> */}
+                <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={this.onPress.bind(this)}>
                     <Text style={styles.loginText}>Login</Text>
                 </TouchableHighlight>
-                 */}
+                
           
             </View>
             );
