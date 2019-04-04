@@ -9,14 +9,13 @@ class Card extends Component {
                 <CardSection>
                     <View style={{flexDirection: "row"}}>
                         <Image
-                        style={{ width: 100, height: 100, margin: 10 }}
+                        style={{ width: 80, height: 80, margin: 10}}
                         source={{uri: 'https://cdn.shopify.com/s/files/1/0086/9072/9020/products/PERSONA_C-01_288a2353-c89f-4038-8286-b501c23ed723_grande.jpg?v=1552428835'}}
                         ></Image>
                         <View style={{ margin: 15 }}>
                             <Text style={{ fontSize: 20  }}>Map of the soul: Persona</Text>
                             <Text style={{ fontSize: 20 }}>BTS</Text>
                         </View>
-                        
                    </View>
                     
   
