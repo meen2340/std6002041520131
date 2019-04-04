@@ -16,13 +16,14 @@ const styles = {
     header: {
         padding: 10,
         alignItems: 'center',
-        backgroundColor: '#FFC0CB'
+        backgroundColor: '#AED6F1'
         
         
     },
     text: {
         fontSize: 30,
-        color: '#2E4053'
+        color: '#FDFEFE',
+        fontWeight: 'bold'
         
     }
 }
