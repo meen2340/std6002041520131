@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, TouchableHighlight} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
 
@@ -29,7 +29,8 @@ class profile extends React.Component{
 				color: '##FDFEFE',
 				fontSize: 20,
 				},
-				headerTintColor: "#FDFEFE",
+			headerTintColor: "#FDFEFE",
+			headerLeft: null
 		};
 	async componentDidMount(){
 		try{
@@ -63,19 +64,17 @@ class profile extends React.Component{
 
 	render(){
 		return(
-			<View>
-				{/* <Text>Profile</Text> */}
+			<View style={styles.container} >
+				
 				<Text style={styles.Texts}>Name : {this.state.name}</Text>
 				<Text style={styles.Texts}>Email : {this.state.email}</Text>
-
-				<Button
-					title="Logout"
-					onPress = { this.onPressLogout}
-					//style={[styles.buttonContainer, styles.loginButton]}
-				/>
-				{/* <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={this.onPress.bind(this)}>
-                    <Text style={styles.loginText}>Login</Text>
-                </TouchableHighlight> */}
+				
+				<TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress = { () => this.props.navigation.push("Login")}>
+                    <Text style={styles.loginText}>Back</Text>
+                </TouchableHighlight>
+				<TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress = { this.onPressLogout}>
+                    <Text style={styles.loginText}>Logout</Text>
+                </TouchableHighlight>
 			</View>
 			
 
@@ -85,9 +84,13 @@ class profile extends React.Component{
 }
 
 const styles = ({
+	container: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#ECF0F1',paddingTop: 100,paddingBottom: 300,
+	  },
 	Texts: {
 		color: '#34495E',
-		fontWeight: 'bold',
 		fontSize: 18,
 		margin: 5
 	  },
@@ -96,13 +99,19 @@ const styles = ({
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginBottom:20,
+		marginBottom:10,
+		marginTop:10,
 		width:240,
 		borderRadius:30,
 	  },
 	  loginButton: {
 		backgroundColor: "#00b5ec",
 	  },
+	  loginText: {
+		color: 'white',
+		fontWeight: 'bold',
+		fontSize: 18
+	  }
 });
 
 export default profile;

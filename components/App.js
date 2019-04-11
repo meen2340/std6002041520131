@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import Header from './Header';
-import Card from './Card';
+// import Header from './Header';
+// import Card from './Card';
 import Login from './Login';
 import Profile from './Profile';
+import About from './About';
 
 // class App extends React.Component {
 //     render() {
@@ -18,9 +19,12 @@ import Profile from './Profile';
 //         );
 //     }
 // }
+
+
 const MainNavigator = createStackNavigator({
 	Login: {screen : Login},
-	Profile: { screen : Profile }
+	Profile: { screen : Profile },
+	About : { screen : About }
 },{
 	initialRouteName: "Login"
 	

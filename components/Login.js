@@ -16,10 +16,13 @@ class Login extends Component {
     constructor(){
         super()
         this.state = {
-            email: 'sswm.meen@gmail.com',
+            email: '',
             password: ''
         }
         // this.onChangeEmail = this.onChangeEmail.bind(this)
+    }
+    componentDidMount(){
+
     }
     onChangeEmail(e){
         console.log('onChangeEmail',e)
@@ -102,7 +105,7 @@ class Login extends Component {
           justifyContent: 'center',
           alignItems: 'center',
           //marginTop: 150,
-          backgroundColor: '#DCDCDC',padding: 200,
+          backgroundColor: '#ECF0F1',padding: 200,
         },
         inputContainer: {
             
