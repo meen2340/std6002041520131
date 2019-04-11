@@ -7,7 +7,7 @@ class Login extends Component {
     constructor(){
         super()
         this.state = {
-            email: '',
+            email: 'sswm.meen@gmail.com',
             password: ''
         }
         // this.onChangeEmail = this.onChangeEmail.bind(this)
@@ -24,9 +24,29 @@ class Login extends Component {
         console.log(this.state)
         const url = 'http://128.199.240.120:9999/api/auth/login'
         axios.post(url, this.state)
-            .then(response => {
+            .then( async response => {
                 console.log('token', response.data.data.token)
+                alert("Login Successfully");
+                try{
+                    await AsyncStorage.setItem('User_Token',response.data.data.token);
+                    this.props.navigation.navigate('Profile');
+                
+                }catch(error){
+                    console.log(error);
+                }
             })
+            .catch(function (error){
+                console.log(error)
+                alert(error);
+            })
+    }
+    async componentDidMount(){
+        let token = await AsyncStorage.getItem("User_Token");
+        if(token!=null){
+            console.log(token);
+            this.props.navigation.navigate("Profile");
+        }
+        
     }
     render() {
         return (
@@ -58,7 +78,9 @@ class Login extends Component {
                 <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={this.onPress.bind(this)}>
                     <Text style={styles.loginText}>Login</Text>
                 </TouchableHighlight>
-                
+                <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.props.navigation.navigate('Profile')}>
+                    <Text style={styles.loginText}>Profile</Text>
+                </TouchableHighlight>
           
             </View>
             );
