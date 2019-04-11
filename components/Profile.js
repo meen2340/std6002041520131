@@ -25,11 +25,11 @@ class profile extends React.Component{
 		static navigationOptions = {
 			title: "Profile",
 			headerStyle:{
-				backgroundColor: '#000000',
-				color: '#FFFFFF',
+				backgroundColor: '#AED6F1',
+				color: '##FDFEFE',
 				fontSize: 20,
 				},
-				headerTintColor: "blue",
+				//headerTintColor: "",
 		};
 	async componentDidMount(){
 		try{
