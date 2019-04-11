@@ -1,9 +1,18 @@
 import React , { Component } from 'react';
 import { View, StyleSheet, Image, Button, TextInput, TouchableHighlight, Text } from 'react-native';
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
 
 class Login extends Component {
+    static navigationOptions = {
+        title: "Login",
+        headerStyle:{
+            backgroundColor: '#AED6F1',
+            color: '##FDFEFE',
+            fontSize: 20,
+            },
+            headerTintColor: "#FDFEFE",
+    };
     constructor(){
         super()
         this.state = {
@@ -78,23 +87,25 @@ class Login extends Component {
                 <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={this.onPress.bind(this)}>
                     <Text style={styles.loginText}>Login</Text>
                 </TouchableHighlight>
-                <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.props.navigation.navigate('Profile')}>
+                {/* <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.props.navigation.navigate('Profile')}>
                     <Text style={styles.loginText}>Profile</Text>
-                </TouchableHighlight>
+                </TouchableHighlight> */}
           
             </View>
             );
         }
     }
+    
     const styles = StyleSheet.create({
         container: {
           //flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          marginTop: 150,
-          //backgroundColor: '#DCDCDC'
+          //marginTop: 150,
+          backgroundColor: '#DCDCDC',padding: 200,
         },
         inputContainer: {
+            
             borderBottomColor: '#F5FCFF',
             backgroundColor: '#FFFFFF',
             borderRadius:30,
