@@ -71,6 +71,7 @@ class profile extends React.Component{
 				<Button
 					title="Logout"
 					onPress = { this.onPressLogout}
+					//style={[styles.buttonContainer, styles.loginButton]}
 				/>
 				{/* <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={this.onPress.bind(this)}>
                     <Text style={styles.loginText}>Login</Text>
